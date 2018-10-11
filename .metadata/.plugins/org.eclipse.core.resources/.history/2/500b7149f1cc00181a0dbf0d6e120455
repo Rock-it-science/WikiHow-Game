@@ -27,7 +27,7 @@ public class JSONifier {
 			writer.write("\""+firstLine+"\"");
 			System.out.println("\""+firstLine+"\"");
 			//while there is a next line, assign it to currentLine, and put quotes around it, also adding a trailing comma to the last addition
-			//JSON doesn't care where you separate lines, so the comma can go on the next line with no issues
+			//Remember is basically one line of data
 			while((currentLine = br.readLine()) != null) {
 				outLine = ", \""+currentLine+"\"";
 				System.out.println(outLine);
