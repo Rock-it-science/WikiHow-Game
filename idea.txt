@@ -1,0 +1,14 @@
+Jackbox-like game where people give titles to wikiHow images
+index page has buttuns to take you to picture page, or guess page
+  picture page displays a random wikihow images (the page displayed on the TV)
+  guess page prompts user to enter a guess for the image
+
+guesses are added to a SQL table
+Button on picture page to display responses
+  Gets responses from table and displays them on screen
+
+Live number of current responses on picture page
+
+Future:
+ Voting
+ Make more like quiplash where each player is given 3 pictures privately, and two people are paired with the same picture, you know what I mean

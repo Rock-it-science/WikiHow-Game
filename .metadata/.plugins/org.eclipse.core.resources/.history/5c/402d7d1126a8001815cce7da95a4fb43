@@ -1,0 +1,56 @@
+import java.io.*;
+public class JSONifier {
+	public static void main(String args[]) {
+		String FILENAME = "filelist.txt";
+		BufferedReader br = null;
+		PrintWriter writer = null;
+		
+		try {
+			writer = new PrintWriter(new FileWriter("JSONified.txt"));
+			br = new BufferedReader(new FileReader(FILENAME));
+			
+			//writer.print("{\"imgArray\":[");
+			//System.out.println("{\"imgArray\":[");
+			
+			writer.print("[");
+			System.out.println("[");
+			
+			String currentLine;
+			String outLine;
+			
+			String firstLine = br.readLine();
+			writer.write("\""+firstLine+"\"\n");
+			System.out.println("\""+firstLine+"\"\n");
+			while((currentLine = br.readLine()) != null) {
+				
+				outLine = ", \""+currentLine+"\"\n";
+				System.out.println(outLine);
+				writer.println(outLine);
+			}
+			
+			
+			
+			writer.print("]");
+			System.out.println("]");
+			
+//			writer.print("]}");
+//			System.out.println("]}");
+		
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found");
+		} catch (IOException e) {
+			System.out.println("other exception");
+		} finally {
+			try {
+				if(br != null) {
+					br.close();
+				}
+				if(writer != null) {
+					writer.close();
+				}
+			} catch (IOException e) {
+				System.out.println("Exception at closing stage");
+			}
+		}
+	}
+}
